@@ -1,6 +1,7 @@
 # This Dockerfile will modify a (somewhat) generic docker image to be compatible as a Brev environment
 FROM samjansa/brev-base
 
+COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
 RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
 RUN apt-get update && apt-get install -y systemd systemd-sysv dbus dbus-user-session sudo software-properties-common vim curl openssh-server
