@@ -6,9 +6,9 @@ RUN apt-get update &&  \
     apt-get install -y bzip2 iputils-ping
 
 # Install miniconda:
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-    bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
-    rm Miniconda3-latest-Linux-x86_64.sh
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh -O miniconda.sh
+RUN bash miniconda.sh -b -p /opt/conda && \
+    rm miniconda.sh
 
 RUN echo 'export PATH=$PATH:/opt/conda/bin' >> /etc/bash.bashrc
 RUN mkdir -p /etc/zsh
